@@ -13,8 +13,8 @@ function App() {
   return (
     <div className="App">
       <ApiProvider>
-        <Header />
         <BrowserRouter>
+          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route exact path="/:partidoId/:localId/:visitanteId" element={<Partido />} />

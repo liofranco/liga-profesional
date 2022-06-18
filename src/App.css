@@ -51,6 +51,9 @@ a{
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
+}
+
+.header-container a{
   color: #00985f;
 }
 
@@ -185,7 +188,7 @@ tbody td:nth-child(2){
 
 tr{
   height: 50px;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid #eee;
 }
 
 td img{
@@ -280,6 +283,8 @@ td img{
   color: #333;
   cursor: pointer;
   font-size: 15px;
+  background-color: transparent;
+  margin-bottom: 15px;
 }
 
 .select-fechas:hover{
@@ -367,7 +372,7 @@ td img{
   font-size: 15px;
   font-weight: 500;
   padding: 20px 0;
-  border-bottom: 1px solid #f5f5f5
+  border-bottom: 1px solid #eee
 }
 
 .partido-info .equipos-container{
@@ -378,7 +383,7 @@ td img{
   color: #333;
   font-size: 15px;
   padding: 25px 0;
-  border-bottom: 1px solid #f5f5f5
+  border-bottom: 1px solid #eee
 }
 
 .partido-info .partido-equipo img{
@@ -388,6 +393,7 @@ td img{
 .partido-info .partido-equipo{
   flex-direction: column;
   max-width: 250px;
+  text-align: center;
 }
 
 .partido-resultado{

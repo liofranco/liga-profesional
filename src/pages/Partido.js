@@ -21,7 +21,7 @@ const Partido = () => {
 
     useEffect(() => {
         const apiPartido = async () => {
-            const urlPartido = `http://localhost:5000/api/${partidoId}/${localId}/${visitanteId}`
+            const urlPartido = `https://liga-profesional-scraping.herokuapp.com/api/${partidoId}/${localId}/${visitanteId}`
             const respuestaPartido = await fetch(urlPartido)
             const resultadoPartido = await respuestaPartido.json()
             setPartido(resultadoPartido.partido)
