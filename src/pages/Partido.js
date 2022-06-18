@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { DateTime, Settings } from 'luxon'
 import EstadisticasPartido from '../components/EstadisticasPartido';
@@ -19,9 +19,13 @@ const Partido = () => {
     const [navAlineaciones, setNavAlineaciones] = useState(false)
     const [navEventos, setNavEventos] = useState(false)
 
+    const id = useMemo(()=>{
+        return {partido: partidoId, local: localId, visitante: visitanteId}
+    }, [partidoId, localId, visitanteId])
+
     useEffect(() => {
         const apiPartido = async () => {
-            const urlPartido = `https://liga-profesional-scraping.herokuapp.com/api/${partidoId}/${localId}/${visitanteId}`
+            const urlPartido = `https://liga-profesional-scraping.herokuapp.com/api/${id.partido}/${id.local}/${id.visitante}`
             const respuestaPartido = await fetch(urlPartido)
             const resultadoPartido = await respuestaPartido.json()
             setPartido(resultadoPartido.partido)
@@ -31,8 +35,8 @@ const Partido = () => {
             setSuplentesVisitante(resultadoPartido.supVisitante)
         }
         apiPartido()
-        // eslint-disable-next-line
-    }, [])
+        
+    }, [id])
 
     if(partido.length < 1) return <Loading />
 
