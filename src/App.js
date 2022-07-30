@@ -17,7 +17,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route exact path="/:partidoId/:localId/:visitanteId" element={<Partido />} />
+            <Route exact path="/:partidoId/:localId/:visitanteId/:year" element={<Partido />} />
           </Routes>
         </BrowserRouter>
       </ApiProvider>

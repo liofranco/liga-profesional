@@ -8,7 +8,7 @@ import Loading from '../components/Loading';
 const Partido = () => {
     
     Settings.defaultLocale = "es"
-    const {partidoId, localId, visitanteId} = useParams()
+    const {partidoId, localId, visitanteId, year} = useParams()
 
     const [partido, setPartido] = useState([])
     const [alineaciones, setAlineaciones] = useState([])
@@ -20,12 +20,12 @@ const Partido = () => {
     const [navEventos, setNavEventos] = useState(false)
 
     const id = useMemo(()=>{
-        return {partido: partidoId, local: localId, visitante: visitanteId}
-    }, [partidoId, localId, visitanteId])
+        return {partido: partidoId, local: localId, visitante: visitanteId, year: year}
+    }, [partidoId, localId, visitanteId, year])
 
     useEffect(() => {
         const apiPartido = async () => {
-            const urlPartido = `https://liga-profesional-scraping.herokuapp.com/api/${id.partido}/${id.local}/${id.visitante}`
+            const urlPartido = `https://liga-profesional-scraping.herokuapp.com/api/${id.partido}/${id.local}/${id.visitante}/${id.year}`
             const respuestaPartido = await fetch(urlPartido)
             const resultadoPartido = await respuestaPartido.json()
             setPartido(resultadoPartido.partido)
@@ -52,6 +52,8 @@ const Partido = () => {
             return <p className="resultado-tiempo live">ET</p>
         } else if(partido.tiempo.includes('finalizado')){
             return <p className="resultado-tiempo">Final</p>
+        } else if(partido.tiempo.includes('apl')){
+            return <p className="resultado-tiempo">Postergado</p>
         } else {
             return <p className="resultado-tiempo">{date.toFormat('d MMM, HH:mm')}</p>
         }
@@ -95,7 +97,7 @@ const Partido = () => {
                     </div>
                 </div>
                 <div className='partido-goles'>
-                    {partido.miniGoles.map((g, i) => {
+                    {partido.golesDetalles.map((g, i) => {
                         return(
                             <div key={i} className='detalles-goles'>
                                 <p>{g.golLocalJugador} {g.golLocalTiempo}</p>

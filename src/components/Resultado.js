@@ -8,8 +8,11 @@ const Resultado = ({partido}) => {
             return <p className="live">{tiempo.slice(10)}</p>
         } else if(tiempo.includes('Desc')){
             return <p className="live">ET</p>
-        } else if(tiempo.includes('Finalizado'))
-        return <p className="final">F</p>
+        } else if(tiempo.includes('Finalizado')){
+            return <p className="final">F</p>
+        } else if(tiempo.includes('Apl')){
+            return <p className="final">Post</p>
+        }
     }
 
     return (
