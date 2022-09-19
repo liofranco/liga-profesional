@@ -17,7 +17,6 @@ const Partido = () => {
     const [suplentesVisitante, setSuplentesVisitante] = useState([])
     const [navEstadisticas, setNavEstadisticas] = useState(true)
     const [navAlineaciones, setNavAlineaciones] = useState(false)
-    const [navEventos, setNavEventos] = useState(false)
 
     const id = useMemo(()=>{
         return {partido: partidoId, local: localId, visitante: visitanteId, year: year}
@@ -62,19 +61,13 @@ const Partido = () => {
     const handleNavEstadisticas = () => {
         setNavEstadisticas(true)
         setNavAlineaciones(false)
-        setNavEventos(false)
     }
     
     const handleNavAlineaciones = () => {
         setNavEstadisticas(false)
         setNavAlineaciones(true)
-        setNavEventos(false)
     }
-    const handleNavEventos = () => {
-        setNavEstadisticas(false)
-        setNavAlineaciones(false)
-        setNavEventos(true)
-    }
+
 
 
 
@@ -112,15 +105,15 @@ const Partido = () => {
                 <ul>
                     <li onClick={handleNavEstadisticas} className={navEstadisticas ? 'active' : ''}>Estadísticas</li>
                     <li onClick={handleNavAlineaciones} className={navAlineaciones ? 'active' : ''}>Alineaciones</li>
-                    <li onClick={handleNavEventos} className={navEventos ? 'active' : ''}>Eventos</li>
                 </ul>
             </nav>
-                {navEstadisticas && estadisticas.length > 0 ? <EstadisticasPartido partido={partido} estadisticas={estadisticas} /> : null}
-                {navAlineaciones && alineaciones[0].length > 0? 
-                    <AlineacionesPartido 
-                        partido={partido} alineaciones={alineaciones}
-                        suplentesLocal={suplentesLocal} suplentesVisitante={suplentesVisitante} />
-                     : null}
+            {navEstadisticas && estadisticas.length > 0 ? <EstadisticasPartido partido={partido} estadisticas={estadisticas} /> : null}
+            {navAlineaciones && alineaciones[0].length > 0 ? 
+                <AlineacionesPartido 
+                    partido={partido} alineaciones={alineaciones}
+                    suplentesLocal={suplentesLocal} suplentesVisitante={suplentesVisitante}
+                /> : null
+            }
         </main>
     );
 };
