@@ -9,7 +9,7 @@ const ApiProvider = (props) => {
 
     useEffect(() => {
         const apiHome = async () => {
-            const url = `https://liga-profesional-scraping.herokuapp.com/api`
+            const url = `https://liga-profesional-scraping.vercel.app/api`
             const respuesta = await fetch(url)
             const resultadoApi = await respuesta.json()
             setResultados(resultadoApi)

@@ -47,7 +47,7 @@ const Fixture = () => {
         setfechaSelect(parseInt(e.target.value))
         setFixture([])
         const consultarApi = async () => {
-            const urlApi = `https://liga-profesional-scraping.herokuapp.com/api/round/${e.target.value}`
+            const urlApi = `https://liga-profesional-scraping.vercel.app/api/round/${e.target.value}`
             const respuestaApi = await fetch(urlApi)
             const resultadoApi = await respuestaApi.json()
             let arrayFechas = []
