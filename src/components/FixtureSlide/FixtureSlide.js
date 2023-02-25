@@ -16,18 +16,15 @@ const FixtureSlide = () => {
 
     const {fixtureSlide, currentRound} = useContext(ApiContext)
 
-    const [actualSlide, setActualSlide] = useState(0)
     const [indexSlide, setIndexSlide] = useState(0)
     const [endSlide, setEndSlide] = useState(false)
 
     useEffect(()=>{
         if(fixtureSlide.length > 0){
-            if(fixtureSlide.every(match => match.status !== 'Finalizado')){
-                setActualSlide(fixtureSlide.findIndex(partido => partido.status !== 'Finalizado'))
-                setIndexSlide(fixtureSlide.findIndex(partido => partido.status !== 'Finalizado'))
-            } else if(fixtureSlide.every(match => match.status === 'Finalizado')){
-                setActualSlide(fixtureSlide.length - 1)
+            if(fixtureSlide.every(match => match.status === 'Finalizado')){
                 setIndexSlide(fixtureSlide.length -1)
+            } else{
+                setIndexSlide(fixtureSlide.findIndex(partido => partido.status !== 'Finalizado'))
             }
         }
     }, [fixtureSlide])
@@ -54,7 +51,11 @@ const FixtureSlide = () => {
                             slidesPerView={"auto"}
                             spaceBetween={15}
                             modules={[Navigation]}
-                            initialSlide={actualSlide}
+                            initialSlide={
+                                fixtureSlide.every(match => match.status === 'Finalizado') ?
+                                    fixtureSlide.length - 1 :
+                                    fixtureSlide.findIndex(partido => partido.status !== 'Finalizado')
+                            }        
                             className="fixture-slider mySwiper"
                             onBeforeInit={(swiper) => {
                                 swiperRef.current = swiper;
