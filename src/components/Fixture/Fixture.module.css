@@ -1,0 +1,120 @@
+.container{
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 15%);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.select_rounds{
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: transparent;
+  margin-bottom: 15px;
+}
+ 
+.select_rounds:hover{
+  color: #989898
+}
+ 
+.select_rounds:focus{
+  border: none;
+}
+
+.matchs{
+    width: 95%;
+    max-width: 1300px;
+}
+
+.day_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.day{
+  width: 100%;
+  padding: 15px;
+  text-align: left;
+  color: #fff;
+  background-color: #001c34;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: capitalize;
+  border-radius: 3px;
+  background-image: url('/public/img/fondo2.jpg');
+}
+
+.match_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  font-size: 14px;
+  width: 95%;
+  border-bottom: 1px solid #f5f5f5;
+  color: #333;
+  gap: 7px;
+}
+
+.match_container:hover{
+  opacity: .5;
+}
+
+.team{
+  display: flex;
+  align-items: center;
+  width: 40%;
+  text-transform: uppercase;
+  gap: 5px;
+}
+
+.team_home{
+  justify-content: flex-end;
+  text-align: end
+}
+
+.resultado_container{
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.resultado_container .resultado{
+  background-color: #001c34;
+  color: #fff;
+  padding: 5px 0;
+}
+
+.resultado_container .resultado-live{
+  background-color: #2de0ff;
+  color: #001c34;
+}
+
+.resultado_container_hora{
+  color: #989898;
+  font-weight: 400;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.team_code{
+  display: none;
+}
+
+@media (max-width: 540px){
+  .team_code{
+    display: block;
+  }
+  .team_name{
+    display: none;
+  }
+}

@@ -1,0 +1,225 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  max-width: 1300px;
+  margin: 30px 0;
+  background-color: #fff;
+  padding: 20px;
+  position: relative;
+}
+
+.container h3{
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1300px;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.swiper_button{
+  background-color: transparent;
+  color: #001c34;
+  border: 2px solid #001c34;
+  font-size: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+}
+
+.swiper_button:hover{
+  background-color: #001c34;
+  color: #fff;
+  cursor: pointer;
+}
+
+.swiper_disabled{
+  opacity: 0;
+}
+
+.swiper_disabled:hover{
+  cursor: default;
+  background-color: transparent;
+  color: #001c34;
+}
+
+.swiper_container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 95%;
+  padding: 25px;
+}
+
+.card_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 270px;
+  transition: all 0.3s;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 15%);
+}
+
+.card_container:hover{
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+.card_header_container{
+  width: 95%;
+  margin-bottom: 20px;
+}
+
+.card_header{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+}
+ 
+.card_header img{
+  margin-bottom: 5px;
+}
+ 
+.card_header p{
+  font-size: 13px;
+  color: #333;
+}
+
+.card_date{
+  text-transform: capitalize;
+}
+
+.card_stadium{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+ 
+.card_stadium img{
+  margin: 0;
+}
+
+.match_container{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.teams_container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+  min-height: 125px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.team{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: #333;
+  font-size: 18px;
+}
+
+.team p{
+  font-weight: 500;
+}
+
+.team_img{
+  width: 40px;
+  height: 40px;
+}
+
+.team_data{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 200;
+}
+
+.team_goals{
+  font-weight: bold;
+  font-size: 40px;
+  color: #001c34;
+  text-align: center;
+  min-width: 40px;
+}
+
+.match_hour{
+  display: flex;
+  flex-direction: column;
+  color: #ccc;
+  border: 1px solid #ccc;
+  color: #999;
+  padding: 30px 7px;
+  border-radius: 3px;
+}
+
+.match_hour p{
+  font-size: 14px;
+}
+
+.live_container{
+  width: 95%;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.live_container p{
+  font-size: 14px;
+  padding: 5px 7px;
+  border-radius: 3px;
+}
+
+.status_finished{
+  color: #fff;
+  background-color: #001c34;
+}
+
+.status_live{
+  background-color: #2de0ff;
+  color: #001c34;
+}
+
+@media (max-width: 460px){
+  .team_data p{
+    font-size: 15px;
+  }
+  .match_hour h3{
+    font-size: 20px;
+  }
+  .teams_container{
+    padding: 0;
+  }
+  .card_container{
+    padding: 10px;
+  }
+}

@@ -1,0 +1,31 @@
+.navigation{
+  background-color: #001c34;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.navigation ul{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+  max-width: 1300px;
+}
+
+.nav_li{
+  margin: 0 10px;
+  padding: 20px 0;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  border-bottom: 3px solid #001c34;
+}
+
+.active{
+  color: #2de0ff;
+  border-bottom: 3px solid #2de0ff;
+}

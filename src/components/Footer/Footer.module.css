@@ -1,0 +1,54 @@
+.container{
+  width: 100%;
+  background-color: #001c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  background-image: url('/public/img/fondo2.jpg');
+}
+
+.sponsors{
+  display: flex;
+  width: 95%;
+  max-width: 1300px;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #2de0ff;
+  flex-wrap: wrap;
+}
+
+.sponsors img{
+  height: 35px
+}
+
+.social{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  gap: 35px;
+}
+
+.social_icons{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.social_icons svg{
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.social_icons svg:hover{
+  color: #2de0ff;
+  scale: 1.1;
+}
