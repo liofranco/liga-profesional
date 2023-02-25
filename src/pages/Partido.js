@@ -19,7 +19,7 @@ const Partido = () => {
 
     useEffect(() => {
         const getInfo = async () => {
-            const urlPartido = `http://192.168.100.3:5000/api/${id.partido}/${id.local}/${id.visitante}`
+            const urlPartido = `https://liga-profesional-scraping.vercel.app/api/${id.partido}/${id.local}/${id.visitante}`
             const respuestaPartido = await fetch(urlPartido)
             const resultadoPartido = await respuestaPartido.json()
             setMatch(resultadoPartido.partido)

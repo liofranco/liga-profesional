@@ -27,7 +27,7 @@ const FixturePage = () => {
         setfechaSelect(parseInt(e.target.value))
         setFixture([])
         const getRound = async () => {
-            const urlApi = `http://192.168.100.3:5000/api/round/${e.target.value}`
+            const urlApi = `https://liga-profesional-scraping.vercel.app/api/round/${e.target.value}`
             const respuestaApi = await fetch(urlApi)
             const resultadoApi = await respuestaApi.json()
             let arrayFechas = []
