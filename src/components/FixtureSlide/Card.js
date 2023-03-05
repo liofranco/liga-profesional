@@ -54,7 +54,10 @@ const Card = ({match, fechaActual}) => {
                 {match.status === 'Sin comenzar' && (
                     <div className={style.match_hour}>
                         <p>{DateTime.fromRFC2822(match.date).toFormat('ccc d')}</p>
-                        <h3>{DateTime.fromRFC2822(match.date).toFormat('H:mm')}</h3>
+                        <h3>
+                            {DateTime.fromRFC2822(match.date).toFormat('H')}:
+                            {DateTime.fromRFC2822(match.date).minute === 1 ? '00' : DateTime.fromRFC2822(match.date).toFormat('mm') }
+                        </h3>
                     </div>
                 )}
             </div>

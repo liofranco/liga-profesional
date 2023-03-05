@@ -202,6 +202,10 @@ a{
   font-size: 13px;
 }
 
+.table img{
+  margin-right: 5px;
+}
+
 thead, tbody, tr{
   width: 100%;
   display: flex;

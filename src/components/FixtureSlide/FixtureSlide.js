@@ -67,7 +67,7 @@ const FixtureSlide = () => {
                         >
                             {fixtureSlide.map((match) => {
                                 return(
-                                    <SwiperSlide key={match.id}>
+                                    <SwiperSlide key={match.id} className={style.swiper_slide}>
                                         <Card match={match} fechaActual={currentRound} />
                                     </SwiperSlide>
                                 )

@@ -32,7 +32,10 @@
   overflow: hidden;
   gap: 15px;
   color: #fff;
-  overflow-x: scroll;
+}
+
+.swiper_slide{
+  width: 300px;
 }
 
 .card{

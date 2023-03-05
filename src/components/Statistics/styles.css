@@ -23,17 +23,3 @@ body {
   -webkit-align-items: center;
   align-items: center;
 }
-
-.swiper-slide img {
-  display: block;
-  object-fit: cover;
-}
-
-.fixture-slider{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  max-width: 1300px;
-  padding: 2px;
-}

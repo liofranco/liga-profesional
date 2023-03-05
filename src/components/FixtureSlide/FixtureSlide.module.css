@@ -69,10 +69,16 @@
   padding: 25px;
 }
 
+.swiper_slide{
+  max-width: 400px;
+}
+
 .card_container{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
+  font-size: 18px;
   width: 100%;
   height: 270px;
   transition: all 0.3s;
@@ -222,5 +228,8 @@
   }
   .card_container{
     padding: 10px;
+  }
+  .swiper-slide{
+    width: 300px;
   }
 }
