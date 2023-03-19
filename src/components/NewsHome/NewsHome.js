@@ -17,7 +17,7 @@ const NewsHome = () => {
                 <div className={style.cards_container}>
                     {news.slice(0,8).map((n, i)=>{
                         return(
-                            <div className={style.card} key={i}>
+                            <Link to={`${n.link.slice(30)}`} className={style.card} key={i}>
                                 <div className={style.card_img}>
                                     <img src={n.img} alt={n.title}/>
                                 </div>
@@ -26,7 +26,7 @@ const NewsHome = () => {
                                     <h4>{n.title}</h4>
                                     <p>{n.subtitle}</p>
                                 </div>
-                            </div>
+                            </Link>
                         )
                     })}
                 </div>

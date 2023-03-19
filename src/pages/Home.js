@@ -11,25 +11,25 @@ import Highlights from '../components/Highlights/Highlights';
 
 const Home = () => {
 
-    const {table} = useContext(ApiContext)
+    const { table } = useContext(ApiContext)
 
     return (
         <main className="main">
-            <Hero/>
+            <Hero />
             {table.length > 0 ? (
                 <section className="home-container">
-                    <FixtureSlide/>
+                    <FixtureSlide />
                     <div className="info-container">
                         <div className="tournament-data-container">
-                            <TablaHome equipos={table.slice(0,5)}/>
-                            <FixtureHome/>
+                            <TablaHome equipos={table.slice(0, 5)} />
+                            <FixtureHome />
                         </div>
-                        <NewsHome/>
+                        <NewsHome />
                     </div>
                 </section>
-            ) : <Loading/>}
-            <Highlights/>
-            <Statistics/>
+            ) : <Loading />}
+            <Highlights />
+            <Statistics />
         </main>
     );
 };

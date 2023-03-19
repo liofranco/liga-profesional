@@ -73,11 +73,14 @@
 
 .menu_mobile ul li{
   list-style: none;
+  width: 100%;
 }
 
 .menu_mobile a{
   color: #fff;
   font-size: 25px;
+  width: 100%;
+  display: flex;
 }
 
 .menu_mobile_open{

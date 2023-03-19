@@ -15,6 +15,7 @@ import Noticias from './pages/Noticias';
 import Video from './pages/Video';
 import Partido from './pages/Partido';
 import ScrollToTop from './components/ScrollToTop';
+import Noticia from './pages/Noticia';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/fixture" element={<Fixture />} />
             <Route path="/tabla" element={<Tabla />} />
             <Route path="/noticias" element={<Noticias />} />
+            <Route path="/notas/:section/:year/:month/:day/:post" element={<Noticia />} />
             <Route path="/videos/:videoId" element={<Video />} />
             <Route exact path="/:partidoId/:localId/:visitanteId/" element={<Partido />} />
           </Routes>

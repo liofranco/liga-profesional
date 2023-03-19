@@ -1,5 +1,6 @@
 import React from 'react';
 import Loading from '../Loading';
+import { Link } from 'react-router-dom';
 import style from './News.module.css'
 
 const News = ({news}) => {
@@ -8,9 +9,9 @@ const News = ({news}) => {
         <div className={style.container}>
             {news.length > 0 ? (
                 <div className={style.cards_container}>
-                    {news.map(n => {
+                    {news.map((n,i) => {
                         return(
-                            <div className={style.card}>
+                            <Link to={`${n.link.slice(30)}`} className={style.card} key={i}>
                                 <div className={style.card_img}>
                                     <img src={n.img} alt={n.title} />
                                 </div>
@@ -19,7 +20,7 @@ const News = ({news}) => {
                                     <h4>{n.title}</h4>
                                     <p className={style.subtitle}>{n.subtitle}</p>
                                 </div>
-                            </div>
+                            </Link>
                         )
                     })}
                 </div>
